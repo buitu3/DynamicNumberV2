@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using DynamicNumber.UI;
 using Ftech.Utilities;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace DynamicNumber.GamePlay
         [SerializeField] private TextMeshProUGUI PlayerBetText;
         [SerializeField] private TextMeshProUGUI PlayerCurrentPointText;
         [SerializeField] private TextMeshProUGUI RemainPickText;
+        [SerializeField] private ResultPopup ResultPopup;
 
         public int PlayerCurrentValue { get; private set; }
         public int PlayerFirstBet { get; private set; }
@@ -26,7 +28,7 @@ namespace DynamicNumber.GamePlay
 
         private void Start()
         {
-            PlayerFirstBet = 100000;
+            PlayerFirstBet = GameDataManager.Instance.PlayerBetValue;
             PlayerCurrentValue = PlayerFirstBet;
 
             PlayerBetText.text = PlayerFirstBet.ToString();
@@ -36,12 +38,14 @@ namespace DynamicNumber.GamePlay
 
             EventDispatcher.RegisterListener(EventID.ON_PLAYER_POINT_CHANGE, OnPlayerPointChangeHandler);
             EventDispatcher.RegisterListener(EventID.ON_CARD_ENQUEUED, OnCardEnqueedHander);
+            EventDispatcher.RegisterListener(EventID.ON_QUEUE_EMPTY, OnQueueEmptyHandler);
         }
 
         private void OnDestroy()
         {
             EventDispatcher.RemoveListener(EventID.ON_PLAYER_POINT_CHANGE, OnPlayerPointChangeHandler);
             EventDispatcher.RemoveListener(EventID.ON_CARD_ENQUEUED, OnCardEnqueedHander);
+            EventDispatcher.RemoveListener(EventID.ON_QUEUE_EMPTY, OnQueueEmptyHandler);
         }
 
         #region Events Handler
@@ -61,6 +65,11 @@ namespace DynamicNumber.GamePlay
         private void OnCardEnqueedHander(Dictionary<string, object> param)
         {
             UpdatePickRemainText();
+        }
+
+        private void OnQueueEmptyHandler(Dictionary<string, object> param)
+        {
+            ResultPopup.Show(PlayerFirstBet, PlayerCurrentValue);
         }
 
         #endregion

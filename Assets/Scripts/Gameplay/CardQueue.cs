@@ -38,8 +38,10 @@ namespace DynamicNumber.GamePlay
                 var card = Queue.Dequeue();
                 card.ActiveEffect();
 
-                yield return new WaitForSeconds(4f);
+                yield return new WaitForSeconds(3f);
             }
+
+            EventDispatcher.PostEvent(EventID.ON_QUEUE_EMPTY);
         }
 
 

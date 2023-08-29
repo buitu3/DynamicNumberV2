@@ -26,10 +26,10 @@ namespace DynamicNumber.GamePlay
             CardPrefabRect = ValueCardPrefab.GetComponent<RectTransform>();
 
             // Calculate board start position
-            var boardCenter = Camera.main.WorldToScreenPoint(CardContainer.position);
-            //var boardWidth = (CardContainer.anchorMax.x - CardContainer.anchorMin.x) * Screen.width;
-            //var boardhe
-            BoardStartPos = new Vector2(boardCenter.x - CardContainer.rect.width/2, boardCenter.y - CardContainer.rect.height/2);
+            var boardCenter = Camera.main.WorldToScreenPoint(CardContainer.position);            
+
+            var boardSize = CalculateRectSize(CardContainer);            
+            BoardStartPos = new Vector2(boardCenter.x - boardSize.x/ 2, boardCenter.y - boardSize.y/ 2);
 
             InitBoard();
         }
@@ -56,7 +56,7 @@ namespace DynamicNumber.GamePlay
                     var card = cardPool[randomIndex];                                        
 
                     // Calculate card position based on board index
-                    var cardPos = Camera.main.ScreenToWorldPoint(CalculateCardPos(xIndex, yIndex));
+                    var cardPos = Camera.main.ScreenToWorldPoint(CalculateCardPos(xIndex, yIndex, card.GetComponent<RectTransform>()));
                     card.transform.position = new Vector3(cardPos.x, cardPos.y, 0);
 
                     cardPool.Remove(card);
@@ -97,17 +97,33 @@ namespace DynamicNumber.GamePlay
             return result;
         }
 
-        private Vector2 CalculateCardPos(int xIndex, int yIndex)
+        private Vector2 CalculateCardPos(int xIndex, int yIndex, RectTransform cardRect)
         {
             var result = Vector2.zero;
 
-            var cardWidth = CardPrefabRect.rect.width;
-            var cardHeight = CardPrefabRect.rect.height;
+            var cardSize = CalculateRectSize(cardRect);           
+            var cardWidth = cardSize.x;
+            var cardHeight = cardSize.y;
 
             result.x = BoardStartPos.x + xIndex * cardWidth + xIndex * OffSetX + cardWidth/2;
             result.y = BoardStartPos.y + yIndex * cardHeight + yIndex * OffSetY + cardHeight/2;
 
             return result;
+        }
+
+        private Vector2 CalculateRectSize(RectTransform rect)
+        {
+            Vector3[] v = new Vector3[4];
+            rect.GetWorldCorners(v);
+            var bottomLeft = Camera.main.WorldToScreenPoint(v[0]);
+            var topLeft = Camera.main.WorldToScreenPoint(v[1]);
+            var topRight = Camera.main.WorldToScreenPoint(v[2]);
+            var bottomRight = Camera.main.WorldToScreenPoint(v[3]);
+
+            var height = topLeft.y - bottomLeft.y;
+            var width = bottomRight.x - bottomLeft.x;
+
+            return new Vector2(width, height);
         }
     }
 }

@@ -7,6 +7,9 @@ namespace DynamicNumber
     public class GameDataManager : Singleton<GameDataManager>
     {
         public CardDataSO CardDatas;
+
+        [HideInInspector]
+        public int PlayerBetValue;
     }
 
 }

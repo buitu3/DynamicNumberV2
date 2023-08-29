@@ -11,6 +11,7 @@ namespace DynamicNumber
         public const string ON_CARD_FLIPPED = "ON_CARD_FLIPPED";
         public const string ON_CARD_ENQUEUED = "ON_CARD_ENQUEUED";
         public const string ON_CARD_QUEUE_FULL = "ON_CARD_QUEUE_FULL";
+        public const string ON_QUEUE_EMPTY = "ON_QUEUE_EMPTY";
 
         public const string ON_CARD_EFFECT_STARTED = "ON_CARD_EFFECT_STARTED";
         public const string ON_CARD_EFFECT_FINISHED = "ON_CARD_EFFECT_FINISHED";
