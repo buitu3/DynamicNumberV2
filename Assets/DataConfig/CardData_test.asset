@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb3f43d26a17d64eaf645004ee5bc6d, type: 3}
+  m_Name: CardData_test
+  m_EditorClassIdentifier: 
+  UpFlipCardBG: {fileID: 21300000, guid: 804461bef59b141dba258fc997c8ca15, type: 3}
+  DownFlipCardBG: {fileID: 21300000, guid: 23d2f9d15f15a43c5bf2c57de1a27879, type: 3}
+  ValueCardRate: 0.5
+  ValueCardLst:
+  - Type: 0
+    ValueAmount: 4
+    TextColor: {r: 0, g: 1, b: 0.06293082, a: 1}
+  - Type: 0
+    ValueAmount: 2
+    TextColor: {r: 0, g: 0.71804976, b: 1, a: 1}
+  - Type: 1
+    ValueAmount: 2
+    TextColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+  - Type: 1
+    ValueAmount: 4
+    TextColor: {r: 1, g: 0.03875816, b: 0, a: 1}
+  - Type: 2
+    ValueAmount: 40
+    TextColor: {r: 0, g: 1, b: 0.06293082, a: 1}
+  - Type: 2
+    ValueAmount: 20
+    TextColor: {r: 0, g: 0.71804976, b: 1, a: 1}
+  - Type: 3
+    ValueAmount: 20
+    TextColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+  - Type: 3
+    ValueAmount: 40
+    TextColor: {r: 1, g: 0.03875816, b: 0, a: 1}
+  ValueCardPrefab: {fileID: 1730395663658424094, guid: 8844cbf57b301c742819bf943ae7f76a, type: 3}
+  SpecialCardLst:
+  - CardName: Reverse Card
+    CardDescription: Reverse the sign of your gold
+    CardIcon: {fileID: 21300000, guid: 83e2f47868ba7452a8bba3ed5038224c, type: 3}
+    CardPrefab: {fileID: 8666560083376635498, guid: 6009a4b4856f7b947bf35d3074462428, type: 3}
+  - CardName: Swap Card
+    CardDescription: Swap the first and last digit of your gold
+    CardIcon: {fileID: 21300000, guid: 1c8046dcb4d1e4e1fa8630fa3a59c709, type: 3}
+    CardPrefab: {fileID: 50748340079202034, guid: e8719ed22a7e9ce41b85af1e394ba58c, type: 3}

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb3f43d26a17d64eaf645004ee5bc6d, type: 3}
+  m_Name: CardData
+  m_EditorClassIdentifier: 
+  DownFlipCardBG: {fileID: 21300000, guid: 23d2f9d15f15a43c5bf2c57de1a27879, type: 3}
+  ValueCardRate: 0.75
+  ValueCardLst:
+  - UpFlipBGSprite: {fileID: 21300000, guid: 2bc701b63b63f40e0893a9fabeaa0a78, type: 3}
+    Type: 0
+    ValueAmount: 4
+    TextColor: {r: 0, g: 1, b: 0.06293082, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 804461bef59b141dba258fc997c8ca15, type: 3}
+    Type: 0
+    ValueAmount: 2
+    TextColor: {r: 0, g: 0.71804976, b: 1, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 86ad28a37b0134b33b88df67b42b7fe0, type: 3}
+    Type: 1
+    ValueAmount: 2
+    TextColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: cb37917483ee24fea8fab306393441e5, type: 3}
+    Type: 1
+    ValueAmount: 4
+    TextColor: {r: 1, g: 0.03875816, b: 0, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 2bc701b63b63f40e0893a9fabeaa0a78, type: 3}
+    Type: 2
+    ValueAmount: 40
+    TextColor: {r: 0, g: 1, b: 0.06293082, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 804461bef59b141dba258fc997c8ca15, type: 3}
+    Type: 2
+    ValueAmount: 20
+    TextColor: {r: 0, g: 0.71804976, b: 1, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 86ad28a37b0134b33b88df67b42b7fe0, type: 3}
+    Type: 3
+    ValueAmount: 20
+    TextColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+  - UpFlipBGSprite: {fileID: 21300000, guid: cb37917483ee24fea8fab306393441e5, type: 3}
+    Type: 3
+    ValueAmount: 40
+    TextColor: {r: 1, g: 0.03875816, b: 0, a: 1}
+  ValueCardPrefab: {fileID: 1730395663658424094, guid: 8844cbf57b301c742819bf943ae7f76a, type: 3}
+  SpecialCardLst:
+  - UpFlipBGSprite: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+    CardName: Zero Card
+    CardDescription: Turn your gold into big 0
+    CardIcon: {fileID: 21300000, guid: b53b7e6fa465b45298b65906db4bbf4b, type: 3}
+    CardPrefab: {fileID: 577745422166308114, guid: 98ac164ecc3bbae4ca848a4aacbecdc6, type: 3}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+    CardName: Reset Card
+    CardDescription: Your gold come back to the beginning
+    CardIcon: {fileID: 21300000, guid: 5d9895f288e1b46e1a4b9edac43dd2af, type: 3}
+    CardPrefab: {fileID: 3537744119185835683, guid: 8a58b02eb1904024eb9e6d2c109f6f8c, type: 3}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+    CardName: Reverse Card
+    CardDescription: Reverse the sign of your gold
+    CardIcon: {fileID: 21300000, guid: 83e2f47868ba7452a8bba3ed5038224c, type: 3}
+    CardPrefab: {fileID: 8666560083376635498, guid: 6009a4b4856f7b947bf35d3074462428, type: 3}
+  - UpFlipBGSprite: {fileID: 21300000, guid: 681db73f19fb24efe843aad713eccb43, type: 3}
+    CardName: Swap Card
+    CardDescription: Swap the first and last digit of your gold
+    CardIcon: {fileID: 21300000, guid: 1c8046dcb4d1e4e1fa8630fa3a59c709, type: 3}
+    CardPrefab: {fileID: 50748340079202034, guid: e8719ed22a7e9ce41b85af1e394ba58c, type: 3}
